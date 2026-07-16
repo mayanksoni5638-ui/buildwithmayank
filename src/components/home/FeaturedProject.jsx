@@ -1,21 +1,30 @@
 import React from "react";
+import khokha from '../../assets/khokha.png'
+import ecom from '../../assets/ecom.png'
+import magicoven from '../../assets/magicoven.png'
 
 function FeaturedProject() {
     const details = [
         {
-            tag: "Travel Agency",
-            title: "Travel Website",
-            desc: "A modern travel agency website designed to showcase tour packages and generate more enquiries.",
+            tag: "Cafe",
+            title: "3 Khakha",
+            desc: "A modern café website designed to showcase the menu, highlight the brand, and encourage customer visits.",
+            image: khokha,
+            link: "https://3khokadummy.vercel.app/"
         },
         {
-            tag: "Restaurant",
-            title: "Restaurant Website",
-            desc: "A stylish restaurant website with menu, gallery, reservations and WhatsApp enquiry.",
+            tag: "E-commerce",
+            title: "Forever",
+            desc: "A clean and responsive online store with product listings, shopping cart, and a seamless shopping experience.",
+            image: ecom,
+            link: "https://e-commerse-frontend-one.vercel.app/"
         },
         {
-            tag: "Business",
-            title: "Business Website",
-            desc: "A professional business website built to establish trust and generate quality leads.",
+            tag: "Bakery",
+            title: "Magic Oven",
+            desc: "A premium bakery website featuring delicious products, custom cake orders, and easy WhatsApp enquiries.",
+            image: magicoven,
+            link: "https://magic-oven-website.vercel.app/"
         },
     ];
 
@@ -35,16 +44,16 @@ function FeaturedProject() {
 
                 {/* Cards */}
                 <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-                    {details.map(({ tag, title, desc }, i) => (
+                    {details.map(({ tag, title, desc, image, link }, i) => (
                         <div
                             key={i}
-                            className="group relative h-[500px] overflow-hidden rounded-3xl border border-border bg-surface shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                            className="group relative h-125 overflow-hidden rounded-3xl border border-border bg-surface shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
                         >
                             {/* Image */}
-                            <div className="h-full w-full bg-accent/30 transition duration-700 group-hover:scale-105" />
+                            <img src={image} alt="" className="h-full w-full object-cover bg-accent/30 transition duration-700 group-hover:scale-105" />
 
                             {/* Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-heading/95 via-heading/45 to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-heading/95 via-heading/45 to-transparent" />
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 w-full p-8 text-white">
@@ -61,13 +70,13 @@ function FeaturedProject() {
                                 </p>
 
                                 <div className="mt-6 flex gap-3">
-                                    <button className="rounded-xl bg-primary px-5 py-3 font-medium text-white transition hover:scale-105">
+                                    <a href={link} target="_blank" className="rounded-xl bg-primary px-5 py-3 font-medium text-white transition hover:scale-105">
                                         Live Demo
-                                    </button>
+                                    </a>
 
-                                    <button className="rounded-xl border border-white/30 bg-white/10 px-5 py-3 font-medium backdrop-blur transition hover:bg-white hover:text-heading">
+                                    {/* <button className="rounded-xl border border-white/30 bg-white/10 px-5 py-3 font-medium backdrop-blur transition hover:bg-white hover:text-heading">
                                         View Project
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </div>

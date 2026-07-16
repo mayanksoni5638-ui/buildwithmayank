@@ -3,6 +3,11 @@ import myphoto from "/myImage.png";
 import ServiceCard from "./ServiceCard";
 
 function Hero() {
+    const scrollToSection = (id) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
     return (
         <section className="bg-background py-8 md:pt-8">
             <div className="max-w-7xl mx-auto pt-2 lg:px-8 grid lg:grid-cols-2 gap-2 md:gap-16 items-center ">
@@ -36,6 +41,7 @@ function Hero() {
                         </button>
 
                         <button
+                            onClick={() => scrollToSection("projects")}
                             className="rounded-xl border border-primary bg-surface px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-all">
                             View My Work
                         </button>

@@ -39,9 +39,9 @@ function Reason() {
                 </p>
 
                 {/* CTA */}
-                <button className="mt-10 rounded-xl bg-primary px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-primary-hover hover:shadow-xl">
+                <a href="https://wa.me/919116389911" target='_blank' className=" inline-block mt-10 rounded-xl bg-primary px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-primary-hover hover:shadow-xl">
                     Build My Website
-                </button>
+                </a>
 
             </div>
 

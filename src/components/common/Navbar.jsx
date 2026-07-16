@@ -106,7 +106,7 @@ function Navbar() {
                     </Link>
 
                     <Link
-                        onClick={() => toggleNavbar("project")}
+                        onClick={() => toggleNavbar("projects")}
                         className="block hover:text-primary">
                         Projects
                     </Link>
