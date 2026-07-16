@@ -1,81 +1,145 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { LuMenu } from "react-icons/lu";
+import { VscChromeClose } from "react-icons/vsc";
+import logo from "/logo.png"
 function Navbar() {
+    const [open, setopen] = useState(false)
+
+    const scrollToSection = (id) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
+
+    const toggleNavbar = (id) => {
+        scrollToSection(id)
+        setopen(false)
+    }
+
     return (
-        <header className="pt-2">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-linear-to-r from-primary via-primary to-secondary shadow-lg rounded-2xl">
+        <header className="pt-2" id='top'>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-surface border border-border shadow-sm rounded-2xl">
                 <div className="flex justify-between items-center h-16">
 
                     {/* Logo */}
-                    <div className="text-white text-2xl font-bold">
-                        Build With Mayank
+                    <div className="text-heading text-xl leading-5 font-bold flex gap-2 items-center">
+                        <img src={logo} alt="logo" className='w-8 h-8' />
+                        <span className='hidden md:block'><span className="text-primary block">Build</span> With Mayank</span>
                     </div>
 
                     {/* Desktop Menu */}
-                    <nav className="hidden md:flex items-center gap-8 text-white font-medium">
-                        <Link to="/" className="transition hover:text-accent">
-                            Home
-                        </Link>
+                    <nav className="hidden md:flex items-center gap-6 text-text font-medium">
 
-                        <Link to="/" className="transition hover:text-accent">
-                            About
-                        </Link>
-
-                        <Link to="/" className="transition hover:text-accent">
+                        <Link
+                            onClick={() => scrollToSection("services")}
+                            to="/"
+                            className="transition hover:text-primary"
+                        >
                             Services
                         </Link>
 
-                        <Link to="/" className="transition hover:text-accent">
-                            Contact
+                        <Link
+                            onClick={() => scrollToSection("projects")}
+                            to="/"
+                            className="transition hover:text-primary"
+                        >
+                            Projects
                         </Link>
+
+                        <Link
+                            onClick={() => scrollToSection("process")}
+                            to="/"
+                            className="transition hover:text-primary"
+                        >
+                            Process
+                        </Link>
+
+                        <Link
+                            onClick={() => scrollToSection("about")}
+                            to="/"
+                            className="transition hover:text-primary"
+                        >
+                            About Me
+                        </Link>
+
+                        <Link
+                            onClick={() => scrollToSection("faq")}
+                            to="/"
+                            className="transition hover:text-primary"
+                        >
+                            FAQs
+                        </Link>
+
                     </nav>
 
-                    {/* CTA Button */}
+                    {/* CTA */}
                     <div className="hidden md:block">
-                        <Link
-                            to="/"
-                            className="bg-surface text-primary font-semibold px-5 py-2.5 rounded-xl hover:bg-accent hover:text-white transition-all duration-300"
+                        <a
+                            href="https://wa.me/919116389911"
+                            target='_blank'
+                            rel="noopener noreferrer"
+                            className="bg-primary hover:bg-primary-hover text-white font-semibold px-5 py-2.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
                         >
                             Get Started
-                        </Link>
+                        </a>
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <button className="md:hidden text-white text-3xl">
-                        ☰
+                    {/* Mobile Button */}
+                    <button
+                        onClick={() => setopen(prev => !prev)}
+                        className="md:hidden text-heading text-3xl">
+                        {open ? <VscChromeClose /> : <LuMenu />}
                     </button>
 
                 </div>
             </div>
 
             {/* Mobile Menu */}
-            <nav className="hidden md:hidden max-w-7xl mx-auto mt-2 px-6 py-4 bg-primary rounded-2xl space-y-3">
+            {open && (
+                <nav className="absolute top-20 left-4 right-4 md:hidden bg-surface border border-border rounded-2xl shadow-lg p-6 space-y-5 z-50 text-center">
 
-                <Link className="block text-white hover:text-accent" to="/">
-                    Home
-                </Link>
+                    <Link
+                        onClick={() => toggleNavbar("services")}
+                        className="block hover:text-primary" >
+                        Services
+                    </Link>
 
-                <Link className="block text-white hover:text-accent" to="/">
-                    About
-                </Link>
+                    <Link
+                        onClick={() => toggleNavbar("project")}
+                        className="block hover:text-primary">
+                        Projects
+                    </Link>
 
-                <Link className="block text-white hover:text-accent" to="/">
-                    Services
-                </Link>
+                    <Link
+                        onClick={() => toggleNavbar("process")}
+                        className="block hover:text-primary" >
+                        Process
+                    </Link>
 
-                <Link className="block text-white hover:text-accent" to="/">
-                    Contact
-                </Link>
+                    <Link
+                        onClick={() => toggleNavbar("about")}
+                        className="block hover:text-primary" >
+                        About Me
+                    </Link>
+                    <Link
+                        onClick={() => toggleNavbar("faq")}
+                        className="block hover:text-primary" >
+                        FAQs
+                    </Link>
 
-                <Link
-                    to="/"
-                    className="block text-center bg-surface text-primary font-semibold py-2 rounded-xl hover:bg-accent hover:text-white transition"
-                >
-                    Get Started
-                </Link>
+                    <a
+                        href="https://wa.me/919116389911"
+                        target='_blank'
+                        rel="noopener noreferrer"
+                        onClick={() => setopen(false)}
+                        className="block text-center bg-primary hover:bg-primary-hover text-white font-semibold py-3 rounded-xl"
+                    >
+                        Get Started
+                    </a>
 
-            </nav>
+                </nav>
+            )}
         </header>
     )
 }

@@ -20,10 +20,10 @@ function FeaturedProject() {
     ];
 
     return (
-        <section className="py-16">
+        <section id="projects" className="py-16">
             {/* Heading */}
             <div className="flex flex-col items-center gap-2">
-                <h2 className="text-3xl font-bold text-text md:text-4xl">
+                <h2 className="text-3xl font-bold text-heading md:text-4xl">
                     Featured Projects
                 </h2>
 
@@ -38,13 +38,13 @@ function FeaturedProject() {
                     {details.map(({ tag, title, desc }, i) => (
                         <div
                             key={i}
-                            className="group relative h-[500px] overflow-hidden rounded-3xl shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                            className="group relative h-[500px] overflow-hidden rounded-3xl border border-border bg-surface shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
                         >
                             {/* Image */}
-                            <div className="h-full w-full bg-surface transition duration-700 group-hover:scale-105" />
+                            <div className="h-full w-full bg-accent/30 transition duration-700 group-hover:scale-105" />
 
                             {/* Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-heading/95 via-heading/45 to-transparent" />
 
                             {/* Content */}
                             <div className="absolute bottom-0 left-0 w-full p-8 text-white">
@@ -65,7 +65,7 @@ function FeaturedProject() {
                                         Live Demo
                                     </button>
 
-                                    <button className="rounded-xl border border-white/30 bg-white/10 px-5 py-3 font-medium backdrop-blur transition hover:bg-white hover:text-text">
+                                    <button className="rounded-xl border border-white/30 bg-white/10 px-5 py-3 font-medium backdrop-blur transition hover:bg-white hover:text-heading">
                                         View Project
                                     </button>
                                 </div>

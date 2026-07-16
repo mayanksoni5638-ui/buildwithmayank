@@ -26,14 +26,14 @@ function Services() {
     ];
 
     return (
-        <section className="py-16">
+        <section id="services" className="py-16">
             {/* Heading */}
-            <div className="flex flex-col items-center text-center ">
+            <div className="flex flex-col items-center text-center">
                 <p className="text-sm font-semibold uppercase tracking-[0.25em] text-primary">
                     Services
                 </p>
 
-                <h2 className="mt-3 text-3xl font-bold text-text md:text-4xl">
+                <h2 className="mt-3 text-3xl font-bold text-heading md:text-4xl">
                     Websites Designed Around Your Business.
                 </h2>
 
@@ -43,7 +43,6 @@ function Services() {
                 </p>
             </div>
 
-
             <div className="container mx-auto px-6">
                 {/* Cards */}
                 <div className="mt-10 flex gap-6 overflow-x-auto pb-2 no-scrollbar">
@@ -51,15 +50,15 @@ function Services() {
                     {services.map((service, i) => (
                         <div
                             key={i}
-                            className="group min-w-[290px] rounded-2xl border border-secondary/60 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl"
+                            className="group min-w-[290px] rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-xl"
                         >
                             {/* Icon */}
-                            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-3xl text-primary transition group-hover:bg-primary group-hover:text-white">
+                            <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/30 text-3xl text-primary transition group-hover:bg-primary group-hover:text-white">
                                 {service.icon}
                             </div>
 
                             {/* Title */}
-                            <h3 className="mt-6 text-xl font-semibold text-text">
+                            <h3 className="mt-6 text-xl font-semibold text-heading">
                                 {service.title}
                             </h3>
 
@@ -71,7 +70,6 @@ function Services() {
                     ))}
 
                 </div>
-
             </div>
         </section>
     );

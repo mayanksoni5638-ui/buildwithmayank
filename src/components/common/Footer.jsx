@@ -2,16 +2,20 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Footer() {
+    const scrollToSection = (id) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
     return (
         <footer className="flex flex-col space-y-10 justify-center m-10">
 
             <nav className="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
-                <Link className="hover:text-gray-900" href="#">Home</Link>
-                <Link className="hover:text-gray-900" href="#">About</Link>
-                <Link className="hover:text-gray-900" href="#">Services</Link>
-                <Link className="hover:text-gray-900" href="#">Media</Link>
-                <Link className="hover:text-gray-900" href="#">Gallery</Link>
-                <Link className="hover:text-gray-900" href="#">Contact</Link>
+                <Link className="hover:text-gray-900" onClick={() => scrollToSection("services")}>Services</Link>
+                <Link className="hover:text-gray-900" onClick={() => scrollToSection("projects")}>Projects</Link>
+                <Link className="hover:text-gray-900" onClick={() => scrollToSection("process")}>Process</Link>
+                <Link className="hover:text-gray-900" onClick={() => scrollToSection("about")}>About Me</Link>
+                <Link className="hover:text-gray-900" onClick={() => scrollToSection("faq")}>FAQs</Link>
             </nav>
 
             <div className="flex justify-center space-x-5">
