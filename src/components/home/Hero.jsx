@@ -1,6 +1,9 @@
 import React from "react";
 import myphoto from "/myImage.png";
 import ServiceCard from "./ServiceCard";
+import { motion } from 'framer-motion'
+import { fadeLeft, fadeRight } from "../../motionAnimation/variants";
+
 
 function Hero() {
     const scrollToSection = (id) => {
@@ -14,29 +17,50 @@ function Hero() {
                 {/* Left */}
                 <div className="relative z-40 space-y-5 text-center lg:text-left flex flex-col items-center justify-center lg:items-start lg:justify-start">
                     {/* Tag */}
-                    <div>
+                    <motion.div
+                        variants={fadeLeft(0.2, 0.3, 100)}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                    >
                         <span className="inline-flex items-center rounded-full bg-accent/40 border border-border px-4 py-2 text-sm font-medium text-primary">
                             Business Website Development
                         </span>
-                    </div>
+                    </motion.div>
 
                     {/* Heading */}
                     <div className="space-y-3">
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-17 text-heading">
+                        <motion.h1
+                            variants={fadeLeft(0.3, 0.3, 100)}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-17 text-heading">
                             Your Business Deserves More Than Just a
                             <span className="block text-primary">Social Media Page.</span>
-                        </h1>
+                        </motion.h1>
 
-                        <p className="max-w-xl text-base md:text-lg text-muted leading-8">
+                        <motion.p
+                            variants={fadeLeft(0.4, 0.3, 100)}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="max-w-xl text-base md:text-lg text-muted leading-8">
                             Build a modern website that showcases your business, builds
                             customer trust, and makes it easy for people to contact you from
                             anywhere.
-                        </p>
+                        </motion.p>
                     </div>
 
                     {/* Buttons */}
-                    <div className="grid grid-cols-2 gap-1 md:gap-4">
-                        <button className="rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg hover:bg-primary-hover hover:-translate-y-0.5 transition-all">
+                    <motion.div
+                        variants={fadeLeft(0.5, 0.3, 100)}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-2 gap-1 md:gap-4">
+                        <button
+                            className="rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg hover:bg-primary-hover hover:-translate-y-0.5 transition-all">
                             Chat on WhatsApp
                         </button>
 
@@ -45,7 +69,7 @@ function Hero() {
                             className="rounded-xl border border-primary bg-surface px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-all">
                             View My Work
                         </button>
-                    </div>
+                    </motion.div>
 
                     {/* Features */}
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-3 gap-3 justify-center lg:justify-start">
@@ -55,16 +79,25 @@ function Hero() {
                             "⚡ Fast Delivery",
                             "🤝 Long-term Support",
                         ].map((item) => (
-                            <span
+                            <motion.span
+                                variants={fadeLeft(0.6, 0.3, 100)}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ once: true }}
                                 key={item}
                                 className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-text shadow-sm"                            >
                                 {item}
-                            </span>
+                            </motion.span>
                         ))}
                     </div>
 
                     {/* About */}
-                    <div className="max-w-xl rounded-2xl border border-border bg-surface p-5 shadow-sm">
+                    <motion.div
+                        variants={fadeLeft(0.7, 0.3, 100)}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="max-w-xl rounded-2xl border border-border bg-surface p-5 shadow-sm">
                         <p className="text-muted leading-7">
                             Hi, I'm <strong className="text-text">Mayank Soni</strong>,
                             founder of{" "}
@@ -72,7 +105,7 @@ function Hero() {
                             help local businesses create fast, modern websites that build
                             trust and generate more enquiries.
                         </p>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* tab Right */}

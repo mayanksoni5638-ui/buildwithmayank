@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { LuMenu } from "react-icons/lu";
 import { VscChromeClose } from "react-icons/vsc";
 import logo from "/logo.png"
+import { fadeDown } from '../../motionAnimation/variants';
 function Navbar() {
     const [open, setopen] = useState(false)
 
@@ -18,12 +20,17 @@ function Navbar() {
     }
 
     return (
-        <header className="pt-2" id='top'>
+        <motion.header
+            variants={fadeDown()}
+            initial="hidden"
+            animate="show"
+            className="pt-2" id='top'>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-surface border border-border shadow-sm rounded-2xl">
                 <div className="flex justify-between items-center h-16">
 
                     {/* Logo */}
-                    <div className="text-heading text-xl leading-5 font-bold flex gap-2 items-center">
+                    <div
+                        className="text-heading text-xl leading-5 font-bold flex gap-2 items-center" >
                         <img src={logo} alt="logo" className='w-8 h-8' />
                         <span className='hidden md:block'><span className="text-primary block">Build</span> With Mayank</span>
                     </div>
@@ -32,6 +39,7 @@ function Navbar() {
                     <nav className="hidden md:flex items-center gap-6 text-text font-medium">
 
                         <Link
+
                             onClick={() => scrollToSection("services")}
                             to="/"
                             className="transition hover:text-primary"
@@ -40,6 +48,7 @@ function Navbar() {
                         </Link>
 
                         <Link
+
                             onClick={() => scrollToSection("projects")}
                             to="/"
                             className="transition hover:text-primary"
@@ -48,6 +57,7 @@ function Navbar() {
                         </Link>
 
                         <Link
+
                             onClick={() => scrollToSection("process")}
                             to="/"
                             className="transition hover:text-primary"
@@ -56,6 +66,7 @@ function Navbar() {
                         </Link>
 
                         <Link
+
                             onClick={() => scrollToSection("about")}
                             to="/"
                             className="transition hover:text-primary"
@@ -64,6 +75,7 @@ function Navbar() {
                         </Link>
 
                         <Link
+
                             onClick={() => scrollToSection("faq")}
                             to="/"
                             className="transition hover:text-primary"
@@ -140,7 +152,7 @@ function Navbar() {
 
                 </nav>
             )}
-        </header>
+        </motion.header>
     )
 }
 

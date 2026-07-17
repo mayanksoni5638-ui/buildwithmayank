@@ -1,10 +1,12 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { BsShop } from "react-icons/bs";
 import { SlPlane } from "react-icons/sl";
 import { LuUtensils, LuRocket } from "react-icons/lu";
 import { PiStethoscopeBold } from "react-icons/pi";
 import { CiUser } from "react-icons/ci";
 import { IoSchoolOutline } from "react-icons/io5";
+import { fadeLeft } from '../../motionAnimation/variants';
 
 function ServiceCard() {
 
@@ -58,7 +60,12 @@ function ServiceCard() {
                     <div className="flex flex-col gap-6 px-6 py-5 md:flex-row md:items-center">
 
                         {/* Left */}
-                        <div className="shrink-0 md:pr-6">
+                        <motion.div
+                            variants={fadeLeft(0.1, 0.3, 100)}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                            className="shrink-0 md:pr-6">
 
                             <p className="text-center md:text-left text-heading font-semibold leading-tight">
                                 <span className="block">
@@ -70,7 +77,7 @@ function ServiceCard() {
                                 </span>
                             </p>
 
-                        </div>
+                        </motion.div>
 
                         {/* Divider */}
                         <div className="hidden h-12 w-px bg-border md:block" />
@@ -79,7 +86,11 @@ function ServiceCard() {
                         <div className="flex flex-1 gap-4 overflow-x-auto pb-2 no-scrollbar">
 
                             {services.map((service, i) => (
-                                <div
+                                <motion.div
+                                    variants={fadeLeft((i + 2) * 0.1, 0.3, 100)}
+                                    initial="hidden"
+                                    whileInView="show"
+                                    viewport={{ once: true }}
                                     key={i}
                                     className="min-w-40 rounded-2xl border border-border bg-background p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                                 >
@@ -96,7 +107,7 @@ function ServiceCard() {
                                             {service.text2}
                                         </p>
                                     )}
-                                </div>
+                                </motion.div>
                             ))}
 
                         </div>
