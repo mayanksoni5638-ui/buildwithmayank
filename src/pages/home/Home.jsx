@@ -8,7 +8,7 @@ import AboutMe from '../../components/home/AboutMe'
 import Faq from '../../components/home/Faq'
 import Cta from '../../components/home/Cta'
 import Reason from '../../components/home/Reason'
-import ToTop from '../../components/home/ToTop'
+// import ToTop from '../../components/home/ToTop'
 
 function Home() {
     return (
@@ -22,7 +22,7 @@ function Home() {
             <AboutMe />
             <Faq />
             <Cta />
-            <ToTop />
+            {/* <ToTop /> */}
 
         </>
     )

@@ -80,7 +80,7 @@ function WhyChooseUs() {
                                     {feature.title}
                                 </h3>
 
-                                <p className="mt-3 max-w-42 text-muted">
+                                <p className="mt-3 max-w-55 mx-auto text-muted">
                                     {feature.description}
                                 </p>
                             </div>

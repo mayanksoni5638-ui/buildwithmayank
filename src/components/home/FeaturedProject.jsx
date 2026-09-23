@@ -1,7 +1,7 @@
 import React from "react";
 import khokha from '../../assets/khokha.png'
 import ecom from '../../assets/ecom.png'
-import magicoven from '../../assets/magicoven.png'
+import vansor from '../../assets/vansor.png'
 
 function FeaturedProject() {
     const details = [
@@ -20,11 +20,11 @@ function FeaturedProject() {
             link: "https://e-commerse-frontend-one.vercel.app/"
         },
         {
-            tag: "Bakery",
-            title: "Magic Oven",
-            desc: "A premium bakery website featuring delicious products, custom cake orders, and easy WhatsApp enquiries.",
-            image: magicoven,
-            link: "https://magic-oven-website.vercel.app/"
+            tag: "Export",
+            title: "Vansor Impex",
+            desc: "A professional export business website showcasing global trade products, company reliability, and client inquiry options.",
+            image: vansor,
+            link: "https://vansorimpex.com/"
         },
     ];
 

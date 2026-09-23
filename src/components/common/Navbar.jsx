@@ -24,25 +24,27 @@ function Navbar() {
             variants={fadeDown()}
             initial="hidden"
             animate="show"
-            className="pt-2" id='top'>
+            className='sticky top-0 py-2 z-50'
+        >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-surface border border-border shadow-sm rounded-2xl">
                 <div className="flex justify-between items-center h-16">
 
                     {/* Logo */}
                     <div
-                        className="text-heading text-xl leading-5 font-bold flex gap-2 items-center" >
+                        onClick={() => scrollToSection("top")}
+                        className="text-heading text-xl leading-5 font-bold flex gap-2 items-center cursor-pointer select-none" >
                         <img src={logo} alt="logo" className='w-8 h-8' />
                         <span className='hidden md:block'><span className="text-primary block">Build</span> With Mayank</span>
                     </div>
 
                     {/* Desktop Menu */}
-                    <nav className="hidden md:flex items-center gap-6 text-text font-medium">
+                    <nav className="hidden md:flex items-center gap-6 text-text font-medium select-none">
 
                         <Link
 
                             onClick={() => scrollToSection("services")}
                             to="/"
-                            className="transition hover:text-primary"
+                            className="transition hover:text-primary cursor-pointer"
                         >
                             Services
                         </Link>
@@ -51,7 +53,7 @@ function Navbar() {
 
                             onClick={() => scrollToSection("projects")}
                             to="/"
-                            className="transition hover:text-primary"
+                            className="transition hover:text-primary cursor-pointer"
                         >
                             Projects
                         </Link>
@@ -60,7 +62,7 @@ function Navbar() {
 
                             onClick={() => scrollToSection("process")}
                             to="/"
-                            className="transition hover:text-primary"
+                            className="transition hover:text-primary cursor-pointer"
                         >
                             Process
                         </Link>
@@ -69,7 +71,7 @@ function Navbar() {
 
                             onClick={() => scrollToSection("about")}
                             to="/"
-                            className="transition hover:text-primary"
+                            className="transition hover:text-primary cursor-pointer"
                         >
                             About Me
                         </Link>
@@ -78,7 +80,7 @@ function Navbar() {
 
                             onClick={() => scrollToSection("faq")}
                             to="/"
-                            className="transition hover:text-primary"
+                            className="transition hover:text-primary cursor-pointer"
                         >
                             FAQs
                         </Link>
@@ -86,7 +88,7 @@ function Navbar() {
                     </nav>
 
                     {/* CTA */}
-                    <div className="hidden md:block">
+                    <div className="hidden md:block cursor-pointer select-none">
                         <a
                             href="https://wa.me/919116389911"
                             target='_blank'
