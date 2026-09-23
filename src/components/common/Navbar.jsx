@@ -24,7 +24,7 @@ function Navbar() {
             variants={fadeDown()}
             initial="hidden"
             animate="show"
-            className='sticky top-0 py-2 z-50'
+            className='sticky top-0 py-2 z-50 overflow-x-hidden'
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-surface border border-border shadow-sm rounded-2xl">
                 <div className="flex justify-between items-center h-16">

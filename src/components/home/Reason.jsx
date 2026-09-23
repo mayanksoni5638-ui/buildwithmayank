@@ -18,7 +18,7 @@ function Reason() {
 
             </div>
 
-            <div className="mx-auto max-w-4xl px-6 text-center">
+            <div className="mx-auto max-w-4xl px-6 text-center overflow-x-hidden">
 
                 {/* Badge */}
                 <motion.span

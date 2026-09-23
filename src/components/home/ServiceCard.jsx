@@ -53,7 +53,7 @@ function ServiceCard() {
                             initial="hidden"
                             whileInView="show"
                             viewport={{ once: true }}
-                            className="shrink-0 md:pr-6">
+                            className="shrink-0 md:pr-6 overflow-x-hidden">
                             <p className="text-center md:text-left text-heading font-semibold leading-tight">
                                 <span className="block">
                                     Helping businesses across

@@ -15,7 +15,7 @@ function Hero() {
         <section className="bg-background py-8 md:pt-8 scroll-m-22" id='top'>
             <div className="max-w-7xl mx-auto pt-2 lg:px-8 grid lg:grid-cols-2 gap-2 md:gap-16 items-center ">
                 {/* Left */}
-                <div className="relative z-40 space-y-5 text-center lg:text-left flex flex-col items-center justify-center lg:items-start lg:justify-start">
+                <div className="relative z-40 space-y-5 text-center lg:text-left flex flex-col items-center justify-center lg:items-start lg:justify-start overflow-x-hidden">
                     {/* Tag */}
                     <motion.div
                         variants={fadeLeft(0.2, 0.3, 100)}
