@@ -14,10 +14,10 @@ function FeaturedProject() {
         },
         {
             tag: "E-commerce",
-            title: "Forever",
+            title: "Diouma",
             desc: "A clean and responsive online store with product listings, shopping cart, and a seamless shopping experience.",
             image: ecom,
-            link: "https://e-commerse-frontend-one.vercel.app/"
+            link: "https://ecom-frontend-flame-kappa.vercel.app"
         },
         {
             tag: "Export",

@@ -26,7 +26,7 @@ function AboutMe() {
                         </span>
 
                         <h2 className="mt-5 text-4xl font-bold leading-tight text-heading">
-                            Hi, I'm <span className="text-primary">Mayank</span> 👋
+                            Hi, I'm <span className="text-primary">Mayank</span>
                         </h2>
 
                         <p className="mt-6 text-lg leading-8 text-muted">

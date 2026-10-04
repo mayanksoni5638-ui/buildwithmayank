@@ -60,13 +60,20 @@ function Hero() {
                         viewport={{ once: true }}
                         className="grid grid-cols-2 gap-1 md:gap-4">
                         <button
-                            className="rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg hover:bg-primary-hover hover:-translate-y-0.5 transition-all">
+                            onClick={() => {
+                                const phoneNumber = "919116389911";
+                                const message = "Hi! I'd like to know more.";
+                                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                                window.open(url, "_blank");
+                            }}
+                            className="rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-lg hover:bg-primary-hover hover:-translate-y-0.5 transition-all select-none"
+                        >
                             Chat on WhatsApp
                         </button>
 
                         <button
                             onClick={() => scrollToSection("projects")}
-                            className="rounded-xl border border-primary bg-surface px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-all">
+                            className="rounded-xl border border-primary bg-surface px-6 py-3 font-semibold text-primary hover:bg-primary hover:text-white transition-all select-none">
                             View My Work
                         </button>
                     </motion.div>
@@ -85,7 +92,7 @@ function Hero() {
                                 whileInView="show"
                                 viewport={{ once: true }}
                                 key={item}
-                                className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-text shadow-sm"                            >
+                                className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-text shadow-sm select-none"                            >
                                 {item}
                             </motion.span>
                         ))}
